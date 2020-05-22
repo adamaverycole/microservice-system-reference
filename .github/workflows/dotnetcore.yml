@@ -17,6 +17,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
+    - name: Install Data Core dependencies
+      run: dotnet restore ./src/Example.Data.Core/Example.Data.Core.sln
+    - name: Build Data Core
+      run: dotnet build --configuration Release --no-restore ./src/Example.Data.Core/Example.Data.Core.sln
+    - name: Test Data Core
+      run: dotnet test --no-restore --verbosity normal ./src/Example.Data.Core/Example.Data.Core.sln
     - name: Install Domain Core dependencies
       run: dotnet restore ./src/Example.Core/Example.Core.sln
     - name: Build Domain Core
