@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: pwd && dotnet restore
+      run: dotnet restore ./src/Example.Web.Api/Example.Web.Api.sln
     - name: Build
-      run: pwd && dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore ./src/Example.Web.Api/Example.Web.Api.sln
     - name: Test
-      run: pwd && dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal ./src/Example.Web.Api/Example.Web.Api.sln
