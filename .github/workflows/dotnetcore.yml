@@ -17,9 +17,15 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Install dependencies
+    - name: Install Web SDK dependencies
+      run: dotnet restore ./src/Example.Web.Sdk/Example.Web.Sdk.sln
+    - name: Build Web SDK
+      run: dotnet build --configuration Release --no-restore ./src/Example.Web.Sdk/Example.Web.Sdk.sln
+    - name: Test Web SDK
+      run: dotnet test --no-restore --verbosity normal ./src/Example.Web.Sdk/Example.Web.Sdk.sln
+    - name: Install Web API dependencies
       run: dotnet restore ./src/Example.Web.Api/Example.Web.Api.sln
-    - name: Build
+    - name: Build Web API
       run: dotnet build --configuration Release --no-restore ./src/Example.Web.Api/Example.Web.Api.sln
-    - name: Test
+    - name: Test Web API
       run: dotnet test --no-restore --verbosity normal ./src/Example.Web.Api/Example.Web.Api.sln
