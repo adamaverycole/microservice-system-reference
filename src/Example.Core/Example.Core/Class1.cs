@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Example.Domain.Core
+namespace Example.Core
 {
     public class Class1
     {

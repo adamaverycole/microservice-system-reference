@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Example.Domain.Models
+namespace Example
 {
     public class Class1
     {

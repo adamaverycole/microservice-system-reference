@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Example.Web.Sdk
+namespace Example.Models
 {
     public class Class1
     {
