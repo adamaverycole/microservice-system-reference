@@ -30,7 +30,7 @@ jobs:
     - name: Test Web SDK
       run: dotnet test --no-restore --verbosity normal ./src/Example.Sdk/Example.Sdk.sln
     - name: Install Web API dependencies
-      run: dotnet restore ./src/Example.Api/Example.Api.sln
+      run: dotnet restore ./src/Example.Web.Api/Example.Web.Api.sln
     - name: Build Web API
       run: dotnet build --configuration Release --no-restore ./src/Example.Web.Api/Example.Web.Api.sln
     - name: Test Web API
